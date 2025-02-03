@@ -8,6 +8,9 @@ const TodoForm = () => {
 
   const addNewTodo = (e) => {
     e.preventDefault();
+    if (title === "" || detail === "") {
+      return alert("제목과 내용을 모두 입력해주세요.");
+    }
     const newTodo = {
       id: crypto.randomUUID(),
       title,
